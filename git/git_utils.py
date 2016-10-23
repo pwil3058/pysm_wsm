@@ -19,7 +19,7 @@ import os
 import re
 import subprocess
 
-from ..lib import runext
+from ..bab import runext
 
 def check_ignored(paths):
     return subprocess.run(["git", "check-ignore"] + paths, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
