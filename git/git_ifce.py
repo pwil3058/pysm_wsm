@@ -43,7 +43,7 @@ class Interface:
                     return False
                 else:
                     raise
-        if attr_name == "in_valid_pgnd": return runext.run_cmd(["git", "config", "--local", "-l"]).is_ok
+        if attr_name == "in_valid_wspce": return runext.run_cmd(["git", "config", "--local", "-l"]).is_ok
         raise AttributeError(attr_name)
     @staticmethod
     def dir_is_in_valid_pgnd(dir_path=None):
