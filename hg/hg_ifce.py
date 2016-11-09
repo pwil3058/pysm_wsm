@@ -76,5 +76,5 @@ class Interface:
         return (True, "")
 
 SCM = Interface()
-from ..scm import ifce as scm_ifce
+from ..scm import scm_ifce
 scm_ifce.add_back_end(SCM)

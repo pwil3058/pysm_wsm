@@ -84,5 +84,5 @@ class Interface:
         return (True, "") if index_is_empty() else (False, _("Index is NOT empty\n"))
 
 SCM = Interface()
-from ..scm import ifce as scm_ifce
+from ..scm import scm_ifce
 scm_ifce.add_back_end(SCM)
