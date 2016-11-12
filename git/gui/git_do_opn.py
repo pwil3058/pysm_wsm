@@ -17,7 +17,7 @@
 
 import os
 
-from ..gtx import doop
+from ...gtx import doop
 
 from . import git_gui_ifce
 
@@ -41,8 +41,8 @@ class DoOpnMixin(doop.DoOperationMixin):
             return
         while os.path.exists(as_file_path):
             from gi.repository import Gtk
-            from ..bab import CmdResult
-            from ..gtx import dialogue
+            from ...bab import CmdResult
+            from ...gtx import dialogue
             result = CmdResult.error(stderr="{0}: already exists".format(as_file_path)) | CmdResult.Suggest.OVERWRITE_OR_RENAME
             resp = self.ask_rename_overwrite_or_cancel(result)
             if resp == Gtk.ResponseType.CANCEL:
@@ -54,7 +54,7 @@ class DoOpnMixin(doop.DoOperationMixin):
                 if as_file_path is None:
                     return
         import shutil
-        from ..gtx import console
+        from ...gtx import console
         console.LOG.start_cmd('cp -p {0} {1}'.format(file_path, as_file_path))
         try:
             shutil.copy2(file_path, as_file_path)

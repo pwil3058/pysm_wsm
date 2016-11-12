@@ -19,16 +19,16 @@ import hashlib
 
 from gi.repository import Gtk
 
-from ..bab import CmdFailure
-from ..bab import utils
-from ..bab import runext
+from ...bab import CmdFailure
+from ...bab import utils
+from ...bab import runext
 
-from ..patch_diff.gui import diff
+from ...patch_diff.gui import diff
 
-from ..gtx import dialogue
-from ..gtx import gutils
-from ..gtx import actions
-from .. import wsm_icons
+from ...gtx import dialogue
+from ...gtx import gutils
+from ...gtx import actions
+from ... import wsm_icons
 
 class WdDiffTextWidget(diff.DiffTextsWidget, diff.FileAndRefreshActions):
     DIFF_MODES = ["git diff", "git diff --staged", "git diff HEAD"]
@@ -84,7 +84,7 @@ class WdDiffTextDialog(dialogue.ListenerDialog):
     def _close_cb(self, dialog, response_id):
         dialog.destroy()
 
-from ..scm.gui.scm_actions import AC_IN_SCM_PGND
+from ...scm.gui.scm_actions import AC_IN_SCM_PGND
 
 actions.CLASS_INDEP_AGS[AC_IN_SCM_PGND].add_actions(
     [

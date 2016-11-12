@@ -20,19 +20,19 @@ import shutil
 from gi.repository import Gtk
 from gi.repository import GObject
 
-from .. import scm
-from ..scm.gui import scm_actions
+from ... import scm
+from ...scm.gui import scm_actions
 
-from ..bab import utils
+from ...bab import utils
 
-from ..gtx import actions
-from ..gtx import dialogue
-from ..gtx import file_tree
-from .. import wsm_icons
+from ...gtx import actions
+from ...gtx import dialogue
+from ...gtx import file_tree
+from ... import wsm_icons
 
-from ..bab import enotify
+from ...bab import enotify
 
-from ..git_gui import git_gui_ifce
+from . import git_gui_ifce
 
 class IndexFileTreeModel(file_tree.FileTreeModel):
     REPOPULATE_EVENTS = scm.E_CHECKOUT|enotify.E_CHANGE_WD

@@ -20,24 +20,24 @@ import shutil
 from gi.repository import Gtk
 from gi.repository import GObject
 
-from .. import scm
-from ..scm.gui import scm_gui_ifce
-from ..scm.gui import scm_actions
-from ..scm.gui import scm_wspce
+from ... import scm
+from ...scm.gui import scm_gui_ifce
+from ...scm.gui import scm_actions
+from ...scm.gui import scm_wspce
 
-from ..git import git_utils
+from .. import git_utils
 
-from ..bab import enotify
-from ..bab import os_utils
-from ..bab import utils
+from ...bab import enotify
+from ...bab import os_utils
+from ...bab import utils
 
-from ..gtx import actions
-from ..gtx import dialogue
-from ..gtx import file_tree
-from ..gtx import xtnl_edit
-from .. import wsm_icons
+from ...gtx import actions
+from ...gtx import dialogue
+from ...gtx import file_tree
+from ...gtx import xtnl_edit
+from ... import wsm_icons
 
-from ..git_gui import git_do_opn
+from . import git_do_opn
 
 class WDTreeModel(file_tree.FileTreeModel):
     UPDATE_EVENTS = os_utils.E_FILE_CHANGES|scm.E_NEW_SCM|scm.E_FILE_CHANGES|scm.E_WD_CHANGES

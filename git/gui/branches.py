@@ -20,20 +20,20 @@ from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
 
-from .. import scm
-from ..scm.gui import scm_actions
+from ... import scm
+from ...scm.gui import scm_actions
 
-from ..bab import enotify
-from ..bab import runext
-from ..bab import utils
+from ...bab import enotify
+from ...bab import runext
+from ...bab import utils
 
-from ..gtx import actions
-from ..gtx import dialogue
-from ..gtx import table
-from ..gtx import tlview
-from .. import wsm_icons
+from ...gtx import actions
+from ...gtx import dialogue
+from ...gtx import table
+from ...gtx import tlview
+from ... import wsm_icons
 
-from ..git_gui import git_do_opn
+from . import git_do_opn
 
 BranchListRow = collections.namedtuple("BranchListRow", ["name", "is_current", "is_merged", "rev", "synopsis"])
 

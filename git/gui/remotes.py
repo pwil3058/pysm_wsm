@@ -21,18 +21,18 @@ from gi.repository import Gdk
 from gi.repository import Gtk
 from gi.repository import GObject
 
-from .. import scm
-from ..scm.gui import scm_actions
+from ... import scm
+from ...scm.gui import scm_actions
 
-from ..bab import enotify
-from ..bab import runext
-from ..bab import utils
+from ...bab import enotify
+from ...bab import runext
+from ...bab import utils
 
-from ..gtx import actions
-from ..gtx import dialogue
-from ..gtx import gutils
-from .. import wsm_icons
-from ..gtx import table
+from ...gtx import actions
+from ...gtx import dialogue
+from ...gtx import gutils
+from ... import wsm_icons
+from ...gtx import table
 
 RemotesListRow = collections.namedtuple("RemotesListRow",    ["name", "inbound_url", "outbound_url"])
 
@@ -224,7 +224,7 @@ class FetchWidget(Gtk.VBox):
     def flag_is_active(self, flag_label):
         return self._flag_btns.flag_is_active(flag_label)
     def do_fetch(self):
-        from ..git_gui import git_gui_ifce
+        from . import git_gui_ifce
         cmd = ["git", "fetch"] + self._flag_btns.get_active_flags()
         if "--all" not in cmd:
             remote = self._remote.get_active_text()

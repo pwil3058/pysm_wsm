@@ -19,20 +19,20 @@ from gi.repository import Gdk
 from gi.repository import Gtk
 from gi.repository import GObject
 
-from .. import scm
-from ..scm.gui import scm_actions
+from ... import scm
+from ...scm.gui import scm_actions
 
-from ..bab import enotify
-from ..bab import runext
-from ..bab import utils
+from ...bab import enotify
+from ...bab import runext
+from ...bab import utils
 
-from ..gtx import actions
-from ..gtx import dialogue
-from ..gtx import table
-from ..gtx import text_edit
-from .. import wsm_icons
+from ...gtx import actions
+from ...gtx import dialogue
+from ...gtx import table
+from ...gtx import text_edit
+from ... import wsm_icons
 
-from ..git_gui import git_gui_ifce
+from . import git_gui_ifce
 
 TagListRow = collections.namedtuple("TagListRow",    ["name", "annotation"])
 

@@ -15,25 +15,25 @@
 
 from gi.repository import Gtk
 
-from .. import scm
-from ..scm.gui import scm_actions
+from ... import scm
+from ...scm.gui import scm_actions
 
-from ..bab import enotify
-from ..bab import CmdFailure
-from ..bab import utils
+from ...bab import enotify
+from ...bab import CmdFailure
+from ...bab import utils
 
-from ..patch_diff import patchlib
+from ...patch_diff import patchlib
 
-from ..gtx import actions
-from ..gtx import dialogue
-from ..gtx import gutils
-from ..gtx import textview
-from ..gtx import text_edit
-from .. import wsm_icons
+from ...gtx import actions
+from ...gtx import dialogue
+from ...gtx import gutils
+from ...gtx import textview
+from ...gtx import text_edit
+from ... import wsm_icons
 
-from ..patch_diff.gui import diff
+from ...patch_diff.gui import diff
 
-from ..git_gui import git_gui_ifce
+from . import git_gui_ifce
 
 class StagedDiffNotebook(diff.DiffTextsWidget):
     def __init__(self):

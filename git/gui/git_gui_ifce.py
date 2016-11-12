@@ -24,23 +24,23 @@ import errno
 
 from gi.repository import Pango
 
-from .. import scm
+from ... import scm
 
-from ..bab import CmdResult
-from ..bab import runext
-from ..bab import enotify
-from ..bab import utils
+from ...bab import CmdResult
+from ...bab import runext
+from ...bab import enotify
+from ...bab import utils
 
-from ..bab.decorators import singleton
+from ...bab.decorators import singleton
 
-from ..patch_diff import patchlib
+from ...patch_diff import patchlib
 
-from ..gtx import table
+from ...gtx import table
 
-from ..git_gui import fsdb_git
+from . import fsdb_git
 
 def do_action_cmd(cmd, success_emask, fail_emask, eflag_modifiers):
-    from ..gtx import console
+    from ...gtx import console
     # TODO: improve do_action_cmd() and move to runext
     result = runext.run_cmd_in_console(console.LOG, cmd)
     # Because git uses stderr to report progress etc we should consider
@@ -262,7 +262,7 @@ class Interface:
         return runext.run_get_cmd(["git", "cat-file", "blob", "HEAD:{}".format(file_path)], do_rstrip=False, default=None, decode_stdout=False)
     @staticmethod
     def get_log_table_data():
-        from ..git_gui import log
+        from . import log
         return log.LogTableData()
     @staticmethod
     def get_commit_message(commit=None):
@@ -323,7 +323,7 @@ class Interface:
                     break
         return None
     def get_remotes_table_data():
-        from ..git_gui import remotes
+        from . import remotes
         return remote.RemoteRepoTableData()
     @staticmethod
     def get_revision(filepath=None):
@@ -336,11 +336,11 @@ class Interface:
         return runext.run_get_cmd(["git", "stash", "show", "-p"] + runext.OPTNL_ARG(stash), default="", do_rstrip=False)
     @staticmethod
     def get_stashes_table_data():
-        from ..git_gui import stashes
+        from . import stashes
         return stashes.StashTableData()
     @staticmethod
     def get_tags_table_data():
-        from ..git_gui import tags
+        from . import tags
         return tags.TagTableData()
     @staticmethod
     def get_wd_file_db():
@@ -360,5 +360,5 @@ def index_is_empty():
     return True
 
 SCM = Interface()
-from ..scm.gui import scm_gui_ifce
+from ...scm.gui import scm_gui_ifce
 scm_gui_ifce.add_back_end(SCM)

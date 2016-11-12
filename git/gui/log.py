@@ -19,19 +19,19 @@ from gi.repository import Gdk
 from gi.repository import Gtk
 from gi.repository import GObject
 
-from .. import scm
-from ..scm.gui import scm_actions
+from ... import scm
+from ...scm.gui import scm_actions
 
-from ..bab import enotify
-from ..bab import runext
-from ..bab import utils
+from ...bab import enotify
+from ...bab import runext
+from ...bab import utils
 
-from ..gtx import actions
-from ..gtx import table
-from .. import wsm_icons
+from ...gtx import actions
+from ...gtx import table
+from ... import wsm_icons
 
-from ..git_gui import git_gui_ifce
-from ..git_gui import commit
+from . import git_gui_ifce
+from . import commit
 
 LogListRow = collections.namedtuple("LogListRow",    ["commit", "abbrevcommit", "author", "when", "subject"])
 

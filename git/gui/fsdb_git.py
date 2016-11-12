@@ -20,13 +20,13 @@ import collections
 
 from gi.repository import Pango
 
-from ..git import git_utils
+from .. import git_utils
 
-from ..bab import runext
+from ...bab import runext
 
-from ..gtx import fsdb
+from ...gtx import fsdb
 
-from ..bab import utils
+from ...bab import utils
 
 class FileStatus:
     UNMODIFIED = '  '

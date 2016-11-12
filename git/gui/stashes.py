@@ -20,25 +20,25 @@ from gi.repository import Gdk
 from gi.repository import Gtk
 from gi.repository import GObject
 
-from .. import scm
-from ..scm.gui import scm_actions
+from ... import scm
+from ...scm.gui import scm_actions
 
-from ..bab import enotify
-from ..bab import CmdFailure
-from ..bab import runext
-from ..bab import utils
+from ...bab import enotify
+from ...bab import CmdFailure
+from ...bab import runext
+from ...bab import utils
 
-from ..gtx import actions
-from ..gtx import dialogue
-from ..gtx import table
-from ..gtx import text_edit
-from .. import wsm_icons
+from ...gtx import actions
+from ...gtx import dialogue
+from ...gtx import table
+from ...gtx import text_edit
+from ... import wsm_icons
 
-from ..patch_diff.gui import diff
+from ...patch_diff.gui import diff
 
-from ..bab import utils
+from ...bab import utils
 
-from ..git_gui import git_gui_ifce
+from . import git_gui_ifce
 
 StashListRow = collections.namedtuple("StashListRow",    ["name", "branch", "commit"])
 
