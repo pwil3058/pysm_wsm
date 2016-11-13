@@ -19,23 +19,23 @@ import errno
 import hashlib
 import re
 
-from ..bab import CmdResult
-from ..bab import enotify
-from ..bab import runext
-from ..bab import utils
+from ...bab import CmdResult
+from ...bab import enotify
+from ...bab import runext
+from ...bab import utils
 
-from ..bab.decorators import singleton
+from ...bab.decorators import singleton
 
 # Some generalized lambdas for constructing commands
-from ..bab.runext import OPTNL_FLAG
-from ..bab.runext import OPTNL_FLAGS
-from ..bab.runext import OPTNL_FLAG_WITH_ARG
-from ..bab.runext import OPTNL_ARG
-from ..bab.runext import OPTNL_ARG_LIST
+from ...bab.runext import OPTNL_FLAG
+from ...bab.runext import OPTNL_FLAGS
+from ...bab.runext import OPTNL_FLAG_WITH_ARG
+from ...bab.runext import OPTNL_ARG
+from ...bab.runext import OPTNL_ARG_LIST
 
-from ..hg_gui import fsdb_hg_mq
+from . import fsdb_hg_mq
 
-from .. import scm
+from ... import scm
 
 # TODO: replace "rollback" with "commit --amend"
 
@@ -52,7 +52,7 @@ SUGGESTION_TABLE = (
 )
 
 def _run_do_cmd(cmd, input_text=None, sanitize_stderr=None):
-    from ..gtx import console
+    from ...gtx import console
     result = runext.run_cmd_in_console(console=console.LOG, cmd=cmd, input_text=input_text, sanitize_stderr=sanitize_stderr)
     return result.mapped_for_suggestions(SUGGESTION_TABLE)
 
@@ -386,5 +386,5 @@ class Mercurial:
         return (True, "")
 
 SCM = Mercurial()
-from ..scm.gui import scm_gui_ifce
+from ...scm.gui import scm_gui_ifce
 scm_gui_ifce.add_back_end(SCM)

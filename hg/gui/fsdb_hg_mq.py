@@ -17,13 +17,13 @@ import os
 
 from gi.repository import Pango
 
-from ..bab import runext
-from ..bab import os_utils
-from ..bab import utils
+from ...bab import runext
+from ...bab import os_utils
+from ...bab import utils
 
-from ..patch_diff import patchlib
+from ...patch_diff import patchlib
 
-from ..gtx import fsdb
+from ...gtx import fsdb
 
 FSTATUS_MODIFIED = 'M'
 FSTATUS_ADDED = 'A'
